@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAHA BROTHER'S OFFICIAL</title>
+  <style>
+    body {
+      background-color: #f9f3f3; /* Light Pink Background Color */
+      font-family: Arial, sans-serif;
+    }
+
+    #container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff; /* White Content Background Color */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 50px;
+    }
+
+    h1 {
+      color: #e83e8c; /* Pink Heading Color */
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 8px;
+    }
+
+    input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #e83e8c; /* Pink Button Color */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d9534f; /* Darker Pink Hover Color */
+    }
+
+    .switch-form {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .switch-form a {
+      color: #e83e8c; /* Pink Link Color */
+    }
+
+    .contact-details {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .contact-details p {
+      margin-bottom: 5px;
+    }
+
+    .contact-details a {
+      color: #e83e8c; /* Pink Link Color */
+    }
+
+    /* Added styles for the show/hide password button */
+    .password-container {
+      position: relative;
+    }
+
+    .password-toggle {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #e83e8c; /* Pink Icon Color */
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>SAHA BROTHER'S OFFICIAL</h1>
+
+    <!-- Login Form -->
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+
+      <label for="password" class="password-container">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <span class="password-toggle" onclick="togglePassword('password')">👁️</span>
+
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- Signup Form -->
+    <form id="signup-form" style="display: none;">
+      <label for="new-username">New Username:</label>
+      <input type="text" id="new-username" name="new-username" required>
+
+      <label for="new-password" class="password-container">New Password:</label>
+      <input type="password" id="new-password" name="new-password" required>
+      <span class="password-toggle" onclick="togglePassword('new-password')">👁️</span>
+
+      <label for="confirm-password" class="password-container">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+      <span class="password-toggle" onclick="togglePassword('confirm-password')">👁️</span>
+
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- Switch between Login and Signup Forms -->
+    <div class="switch-form">
+      <p>Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a></p>
+      <p>Already have an account? <a href="#" id="switch-to-login">Login</a></p>
+    </div>
+
+    <!-- Contact for more details -->
+    <div class="contact-details">
+      <p>Contact for more details:</p>
+      <p>Email: <a href="mailto:vishalkumardhm095@gmail.com">vishalkumardhm095@gmail.com</a></p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to switch between Login and Signup Forms
+    document.getElementById('switch-to-signup').addEventListener('click', function() {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('signup-form').style.display = 'block';
+    });
+
+    document.getElementById('switch-to-login').addEventListener('click', function() {
+      document.getElementById('login-form').style.display = 'block';
+      document.getElementById('signup-form').style.display = 'none';
+    });
+
+    // JavaScript to toggle password visibility
+    function togglePassword(inputId) {
+      const passwordInput = document.getElementById(inputId);
+      passwordInput.type = (passwordInput.type === 'password') ? 'text' : 'password';
+    }
+  </script>
+</body>
+</html>
